@@ -123,6 +123,47 @@ label.radio input:checked+div {
     line-height: 16px
 }
 </style>
+<script>
+
+  function getList(){
+
+
+      // Your existing code unmodified...
+      var iDiv = document.getElementById('list');
+
+      for (let i=0;i<5;i++){
+
+           // Now create and append to iDiv
+          var innerDiv = document.createElement('div');
+          innerDiv.className = 'col-md-6';
+          innerDiv.id = 'detail'
+
+          var inv = document.createElement("h5");
+          inv.className='mb-0 text-purple';
+          inv.innerHTML = "#1234545645645";
+
+          var title = document.createElement("h5");
+          title.className='mb-3';
+          title.innerHTML = "AC";
+
+          var divPrice = document.createElement("div");
+          divPrice.innerHTML = '<div class="d-flex justify-content-between">'+
+                                '<div class="d-flex flex-row mt-1">'+
+                                '<h6 class="text-success font-weight-bold ml-1">Rp. 500.000,00</h6>'+
+                                '</div>'+
+                                '<div class="d-flex flex-row align-items-center com-color"> <a href="#" ><i class="fa fa-eye">&nbsp;</i> <span class="ml-1">lihat Faktur</span></a> </div>'+
+                                '</div>             '+
+                                '<div class="buttons"> <button class="btn btn-success btn-block" disabled>Selesai</button> </div>'
+
+          innerDiv.appendChild(inv)
+          innerDiv.appendChild(title)
+          innerDiv.appendChild(divPrice)
+          iDiv.appendChild(innerDiv);        
+      }
+  }
+
+</script>
+
 </head>
 <body>
 <div class="bs-example">
@@ -143,12 +184,6 @@ label.radio input:checked+div {
               <span class="badge">5</span>
         </a>
         
-        <!-- <a href="#" class=" mr-4 nav-justified notification" style="color: rgb(252, 251, 249);">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
-                <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-            </svg>
-        </a> -->
     </div>
   </nav>
   
@@ -160,9 +195,9 @@ label.radio input:checked+div {
               </div> 
               <!-- <a href="#" class="cancel com-color">Cancel and return to website</a> -->
           </div>
-          <div class="row">
-              <div class="col-md-6">
-                  <h5 class="mb-0 text-purple">#1232132131</h5>
+          <div class="row" id="list">
+              <div class="col-md-6" id="detail">
+                  <h5 class="mb-0 text-purple" >#1232132131</h5>
                   <h5 class="mb-3">HP Android</h5>
                   <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row mt-1">
@@ -172,7 +207,10 @@ label.radio input:checked+div {
                   </div>
                   
                   <div class="buttons"> <button class="btn btn-success btn-block" disabled>Selesai</button> </div>
-              </div>              
+              </div>  
+              <script>
+                getList()
+              </script>            
           </div>
       </div>
     </section>
@@ -273,3 +311,4 @@ label.radio input:checked+div {
 </div>
 </body>
 </html>
+
